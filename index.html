@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<title>Mazein Andrey test task</title>
+<style>
+    body{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: auto;
+    }
+    .slidItem {
+        display:none;
+    }
+
+    .sliderBox{
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -200px 0 0 -200px;
+    }
+
+</style>
+<body>
+
+<div class="sliderBox">
+    <img class="slidItem" src="andrey.jpg" style="width:100%">
+    <img class="slidItem" src="maksim.jpg" style="width:100%">
+    <img class="slidItem" src="sergey.jpg" style="width:100%">
+</div>
+
+<script>
+    window.onload=function(){
+
+        var arrOfPic = document.getElementsByClassName("slidItem");
+        var currentIndexOfPic = arrOfPic.length-1;
+        slider();
+
+        function slider() {
+            arrOfPic[currentIndexOfPic].style.display = "none";
+            currentIndexOfPic++;
+            if (currentIndexOfPic > arrOfPic.length-1) {
+                currentIndexOfPic = 0
+            }
+            arrOfPic[currentIndexOfPic].style.display = "block";
+            setTimeout(slider, 5000);
+        }
+    }
+
+</script>
+
+</body>
+</html>
